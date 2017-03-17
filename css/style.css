@@ -1,0 +1,1025 @@
+@charset "utf-8";
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+code,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+select,
+option,
+th,
+td {
+	margin: 0;
+	padding: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	width: 100%;
+	min-width: 320px;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+	color: #000;
+	font-size: 12px;
+	font-family: "microsoft yahei";
+}
+
+em,
+i {
+	font-style: normal;
+}
+
+fieldset,
+img {
+	border: 0;
+}
+
+li,
+h1,
+h2,
+h3,
+dl,
+dt,
+dd,
+b,
+span,
+div {
+	text-overflow: ellipsis;
+}
+
+a {
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+textarea,
+select,
+input[type="text"],
+input[type="password"] {
+	-webkit-appearance: none;
+}
+
+.clearfix:after {
+	display: block;
+	clear: both;
+	content: "";
+	visibility: hidden;
+	height: 0;
+	font-size: 0;
+}
+
+.clearfix {
+	zoom: 1
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.tb {
+	display: table;
+	width: 100%;
+}
+
+.tb_cell {
+	display: table-cell;
+	vertical-align: middle;
+	line-height: 100%;
+}
+
+.inner84 {
+	width: 84%;
+	margin: 0px auto;
+}
+
+.brown,
+a.brown {
+	color: #793600;
+}
+
+.fs10 {
+	font-size: 10px;
+}
+
+.fs12 {
+	font-size: 12px;
+}
+
+.fs18 {
+	font-size: 1.5em;
+}
+
+.hidden {
+	display: none;
+}
+
+.gray,
+a.gray {
+	color: #484848;
+}
+
+
+/*通用组件*/
+
+.page {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.page_pop {
+	position: absolute;
+	width: 76%;
+	left: 12%;
+	top: 20%;
+}
+#scene li{
+	width: 100%;
+	height: 100%;
+}
+.pop_blessing {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	background: url(../images/bg_blessing.png);
+	background-size: 100% 100%;
+}
+.denglong1{
+	position: absolute;
+	width: 16%;
+	animation:bounceInLeft 2s;
+	-webkit-animation:bounceInLeft 2s;
+}
+.denglong2{
+	position: absolute;
+	width: 30%;
+	left: 10%;
+	animation:bounceInUp 2s;
+	-webkit-animation:bounceInUp 2s;
+}
+.denglong3{
+	position: absolute;
+	width: 27%;
+	left: 35%;
+	animation:bounceInRight 2s;
+	-webkit-animation:bounceInRight 2s;
+}
+.logo{
+	position: absolute;
+	width: 45%;
+    left: 3%;
+    top: 26%;
+	animation:bounceInRight 2s;
+	-webkit-animation:bounceInRight 2s;
+}
+.star{
+	position: absolute;
+    width: 105%;
+    top: 46%;
+	animation:bounceInRight 2s;
+	-webkit-animation:bounceInRight 2s;
+}
+.shuimo{
+	position: absolute;
+	width: 100%;
+	animation:fadeIn 2s;
+	-webkit-animation:fadeIn 2s;
+}
+.text{
+	position: absolute;
+	width: 46%;
+    top: 58%;
+    left: 10%;
+    animation:wobble 3s;
+	-webkit-animation:wobble 3s;
+}
+.tangyuan{
+	position: absolute;
+	width: 16%;
+    right: 47%;
+    bottom: 15%;
+    animation:pulse 1s infinite;
+	-webkit-animation:pulse 1s infinite;
+}
+.yuanxiao{
+	position: absolute;
+	width: 40%;
+	right: 2%;
+	animation:flash 3s infinite;
+	-webkit-animation:flash 3s infinite;
+}
+
+
+.mask {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: #000;
+	opacity: 0.73;
+}
+
+.night_sky {
+	background: url("../images/bg_choice.jpg") no-repeat;
+	background-size: 100% 100%;
+}
+
+
+/*右上角音乐播放器*/
+
+.bg_music {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	right: 0px;
+	top: 25px;
+	z-index: 98;
+	box-sizing: border-box;
+	padding: 1px 0px;
+}
+
+.bg_music.play {
+	background: url("../images/note_fly.gif") no-repeat;
+	background-size: 50px;
+}
+
+.bg_music .note {
+	height: 30px;
+	width: 30px;
+	margin-top: 15px;
+	background: url("../images/note.png") no-repeat;
+	background-size: 30px;
+}
+
+
+/*首页*/
+
+.game_start {
+	background: url("../images/bg_index.png") no-repeat;
+	background-size: 100% 100%;
+}
+
+.game_start .arc_white {
+	margin: 0 auto;
+	width: 50%;
+	height: 45px;
+	line-height: 40px;
+	background: url("../images/btn_next.png") no-repeat center;
+	background-size: 100% 100%;
+	color: #ffffff;
+	margin-top: 125%;
+	font-size: 1.5em;
+	animation:myZoom 1s linear infinite alternate;
+	-webkit-animation:myZoom 1s linear infinite alternate;
+}
+
+@keyframes myZoom {
+	from {
+		transform: scale(1);
+	}
+	to {
+		transform: scale(.8);
+	}
+}
+
+@-webkit-keyframes myZoom{
+	from {
+		-webkit-transform: scale(1);
+	}
+	to {
+		-webkit-transform: scale(.8);
+	}
+}
+
+
+/*loading*/
+
+.loading_wrap {
+	z-index: 101;
+}
+
+.loading {
+	margin: 65% auto 0 auto;
+	width: 50px;
+	height: 60px;
+	text-align: center;
+	font-size: 10px;
+}
+
+.loading> div {
+	background-color: #ffffff;
+	height: 100%;
+	width: 6px;
+	display: inline-block;
+	-webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+	animation: stretchdelay 1.2s infinite ease-in-out;
+}
+
+.loading .rect2 {
+	-webkit-animation-delay: -1.1s;
+	animation-delay: -1.1s;
+}
+
+.loading .rect3 {
+	-webkit-animation-delay: -1.0s;
+	animation-delay: -1.0s;
+}
+
+.loading .rect4 {
+	-webkit-animation-delay: -0.9s;
+	animation-delay: -0.9s;
+}
+
+.loading .rect5 {
+	-webkit-animation-delay: -0.8s;
+	animation-delay: -0.8s;
+}
+
+@-webkit-keyframes stretchdelay {
+	0%,
+	40%,
+	100% {
+		-webkit-transform: scaleY(0.4)
+	}
+	20% {
+		-webkit-transform: scaleY(1.0)
+	}
+}
+
+@keyframes stretchdelay {
+	0%,
+	40%,
+	100% {
+		transform: scaleY(0.4);
+		-webkit-transform: scaleY(0.4);
+	}
+	20% {
+		transform: scaleY(1.0);
+		-webkit-transform: scaleY(1.0);
+	}
+}
+
+
+/*规则介绍*/
+
+.game_roll {
+	background: url("../images/bg_rule.jpg") no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+}
+
+.game_roll .inner {
+	box-sizing: border-box;
+	padding: 1px 0px;
+}
+
+.game_roll .btn_pop {
+	margin-top: 54%;
+	-webkit-animation: bounceInDown 1.2s,rubberBand 1s 1.2s;
+	animation: bounceInDown 1.2s,rubberBand 1s 1.2s;
+}
+@-webkit-keyframes bounceInDown {
+	0%,
+	60%,
+	75%,
+	90%,
+	to {
+		-webkit-animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+		animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+	}
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, -3000px, 0);
+		transform: translate3d(0, -3000px, 0)
+	}
+	60% {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 25px, 0);
+		transform: translate3d(0, 25px, 0)
+	}
+	75% {
+		-webkit-transform: translate3d(0, -10px, 0);
+		transform: translate3d(0, -10px, 0)
+	}
+	90% {
+		-webkit-transform: translate3d(0, 5px, 0);
+		transform: translate3d(0, 5px, 0)
+	}
+	to {
+		-webkit-transform: none;
+		transform: none
+	}
+}
+
+@keyframes bounceInDown {
+	0%,
+	60%,
+	75%,
+	90%,
+	to {
+		-webkit-animation-timing-function: cubic-bezier(.215, .61, .355, 1);
+		animation-timing-function: cubic-bezier(.215, .61, .355, 1)
+	}
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, -3000px, 0);
+		transform: translate3d(0, -3000px, 0)
+	}
+	60% {
+		opacity: 1;
+		-webkit-transform: translate3d(0, 25px, 0);
+		transform: translate3d(0, 25px, 0)
+	}
+	75% {
+		-webkit-transform: translate3d(0, -10px, 0);
+		transform: translate3d(0, -10px, 0)
+	}
+	90% {
+		-webkit-transform: translate3d(0, 5px, 0);
+		transform: translate3d(0, 5px, 0)
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none
+	}
+}
+@-webkit-keyframes rubberBand {
+	0% {
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1)
+	}
+	30% {
+		-webkit-transform: scale3d(1.25, .75, 1);
+		transform: scale3d(1.25, .75, 1)
+	}
+	40% {
+		-webkit-transform: scale3d(.75, 1.25, 1);
+		transform: scale3d(.75, 1.25, 1)
+	}
+	50% {
+		-webkit-transform: scale3d(1.15, .85, 1);
+		transform: scale3d(1.15, .85, 1)
+	}
+	65% {
+		-webkit-transform: scale3d(.95, 1.05, 1);
+		transform: scale3d(.95, 1.05, 1)
+	}
+	75% {
+		-webkit-transform: scale3d(1.05, .95, 1);
+		transform: scale3d(1.05, .95, 1)
+	}
+	to {
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1)
+	}
+}
+
+@keyframes rubberBand {
+	0% {
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1)
+	}
+	30% {
+		-webkit-transform: scale3d(1.25, .75, 1);
+		transform: scale3d(1.25, .75, 1)
+	}
+	40% {
+		-webkit-transform: scale3d(.75, 1.25, 1);
+		transform: scale3d(.75, 1.25, 1)
+	}
+	50% {
+		-webkit-transform: scale3d(1.15, .85, 1);
+		transform: scale3d(1.15, .85, 1)
+	}
+	65% {
+		-webkit-transform: scale3d(.95, 1.05, 1);
+		transform: scale3d(.95, 1.05, 1)
+	}
+	75% {
+		-webkit-transform: scale3d(1.05, .95, 1);
+		transform: scale3d(1.05, .95, 1)
+	}
+	to {
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1)
+	}
+}
+.game_roll .page_pop {
+	background: url("../images/bg_pop_red.png") no-repeat;
+	background-size: 100% 100%;
+	box-sizing: border-box;
+	padding: 1px 0px;
+	height: 340px;
+	color: #ffffff;
+}
+
+.game_roll .page_pop .icon {
+	position: absolute;
+	right: -20px;
+	top: -45px;
+	-webkit-animation: mySwing 2s linear infinite alternate;
+	animation: mySwing 2s linear infinite alternate;
+}
+@-webkit-keyframes mySwing {
+	0% {
+		-webkit-transform: rotate(5deg);
+	}
+	to {
+		-webkit-transform: rotate(-20deg);
+	}
+}
+
+@keyframes mySwing {
+	0% {
+		transform: rotate(5deg);
+	}
+	to {
+		transform: rotate(-20deg);
+	}
+}
+.game_roll .page_pop article {
+	text-align: center;
+	margin: 20px 0px 50px 0px;
+	font-size: 1.5em;
+	text-decoration: underline;
+}
+
+.game_roll .page_pop p {
+	font-size: 1.2em;
+	line-height: 2;
+	padding: 0px 40px;
+    color: #716969;
+}
+
+.game_roll .page_pop p:first-child {
+	text-indent: 2em;
+}
+
+.game_roll .page_pop .btn_start {
+	margin-top: 30px;
+	-webkit-animation: flash 2s infinite;
+	animation: flash 2s infinite;
+}
+
+.game_roll .page_pop a {
+	color: #ffffff;
+	text-decoration: underline;
+}
+
+
+/*选择灯谜类型*/
+
+.riddle_choice {
+	background: url("../images/bg_choice.jpg") no-repeat;
+	background-size: 100% 100%;
+}
+
+.riddle_choice .inner {
+	position: relative;
+}
+
+.riddle_choice .lantern_head {
+	background: url("../images/lantern_head.png") no-repeat center top;
+	background-size: 88% auto;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.riddle_choice .lantern_foot {
+	background: url("../images/lantern_foot.png") no-repeat center top;
+	background-size: 90% auto;
+	width: 100%;
+	position: absolute;
+	left: 0;
+}
+
+.ss-icon {
+	width: 20px;
+	height: 20px;
+	background: #B94A48;
+}
+
+#spinner {
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	position: absolute;
+	-webkit-transition: -webkit-transform 1s;
+	-moz-transition: -moz-transform 1s;
+	transition: transform 1s;
+}
+
+#spinner .box {
+	position: absolute;
+	bottom: 0px;
+}
+
+#spinner .box2 {
+	transform: rotatey(60deg);
+	-webkit-transform: rotatey(60deg);
+	-moz-transform: rotatey(60deg);
+	background: url("../images/riddle2.jpg") no-repeat;
+	background-size: 100% 100%;
+}
+
+#spinner .box3 {
+	transform: rotatey(120deg);
+	-webkit-transform: rotatey(120deg);
+	-moz-transform: rotatey(120deg);
+	background: url("../images/riddle3.jpg") no-repeat;
+	background-size: 100% 100%;
+}
+
+#spinner .box4 {
+	transform: rotatey(180deg);
+	-webkit-transform: rotatey(180deg);
+	-moz-transform: rotatey(180deg);
+	background: url("../images/riddle4.jpg") no-repeat;
+	background-size: 100% 100%;
+}
+
+#spinner .box5 {
+	transform: rotatey(240deg);
+	-webkit-transform: rotatey(240deg);
+	-moz-transform: rotatey(240deg);
+	background: url("../images/riddle5.jpg") no-repeat;
+	background-size: 100% 100%;
+}
+
+#spinner .box6 {
+	transform: rotatey(300deg);
+	-webkit-transform: rotatey(300deg);
+	-moz-transform: rotatey(300deg);
+	background: url("../images/riddle6.jpg") no-repeat;
+	background-size: 100% 100%;
+}
+
+#spinner .box1 {
+	background: url("../images/riddle1.jpg") no-repeat;
+	background-size: 100% 100%;
+}
+
+
+/*答题页*/
+
+.ques_store {
+	width: 100%;
+	display: none;
+}
+
+.ques_store> li {
+	display: none;
+	vertical-align: middle;
+	background: url("../images/bg_ques.png") no-repeat;
+	background-size: 100% 100%;
+	line-height: 100%;
+}
+
+.ques_store .inner {
+	width: 55%;
+	margin: 0px auto;
+	overflow: hidden;
+	box-sizing: border-box;
+	padding: 1px 0px;
+}
+
+.ques_store .red_bar {
+	margin: 20% auto 0px auto;
+	margin-left: 15%;
+	background: #c80000;
+	height: 24px;
+	line-height: 24px;
+	color: #ffffff;
+	width: 75%;
+	position: relative;
+	box-sizing: border-box;
+	padding: 0px 5px;
+}
+
+.ques_store .ques_index {
+	margin: 0 2px;
+}
+
+.ques_store .red_bar .ico {
+	position: absolute;
+	left: -18px;
+	top: -8px;
+}
+
+.ques_store .level {
+	width: 43%;
+	margin: 20% auto 0px auto;
+	padding: 0px 15px 10px 15px;
+	border-bottom: solid 3px #c80000;
+}
+
+.ques_store .ques {
+	width: 80%;
+	margin: 3% auto;
+	line-height: 24px;
+	height: 48px;
+	font-size: 1.5em;
+}
+
+.ques_store .txt {
+	display: block;
+	padding: 0px;
+	border: 3px solid #c80000;
+	margin: 5% auto 12% auto;
+	width: 80%;
+	height: 28px;
+	line-height: 28px;
+	font-size: 1.5em;
+}
+
+.ques_store .mainsub {
+	margin: 0px auto;
+	width: 80%;
+}
+
+.ques_store .mainsub .btn_pink {
+	height: 28px;
+	border: solid 2px #ffffff;
+	border-radius: 5px;
+	background: #db50a3;
+	line-height: 28px;
+	color: #ffffff;
+	font-size: 1.2em;
+	padding: 0px 5px;
+}
+
+.ques_store .mainsub .gray {
+	line-height: 32px;
+}
+
+.answer_correct,
+.answer_error {
+	position: absolute;
+	width: 62%;
+	left: 19%;
+	top: 10%;
+}
+
+.ques_store .ques_list {
+	width: 76%;
+	margin: 8% 0px 0px 15%;
+}
+
+.ques_store .ques_list li {
+	height: 32px;
+	padding: 10px 0px;
+}
+
+.ques_store .ques_list li:first-child {
+	background: url("../images/icon_option.png") no-repeat left center;
+	background-size: auto 20px;
+	-webkit-animation: bounceInLeft .6s;
+	animation: bounceInLeft .6s;
+	
+}
+
+.ques_store .ques_list li:nth-child(2) {
+	transform: translateX(2000px);
+	background: url("../images/icon_option.png") no-repeat left center;
+	background-size: auto 20px;
+	-webkit-animation: bounceInRight .6s .6s forwards;
+	animation: bounceInRight .6s .6s forwards;
+}
+
+.ques_store .ques_list li:nth-child(3) {
+	transform: translateX(-2000px);
+	background: url("../images/icon_option.png") no-repeat left center;
+	background-size: auto 20px;
+	-webkit-animation: bounceInLeft .6s 1.2s forwards;
+	animation: bounceInLeft .6s 1.2s forwards;
+}
+
+.ques_store .ques_list li p {
+	float: left;
+	height: 32px;
+	line-height: 32px;
+	font-size: 1.5em;
+	margin-left: 15px;
+}
+
+.ques_store .ques_list .serial {
+	width: 38px;
+	height: 32px;
+	float: left;
+}
+
+.ques_store .ques_list .ico_correct {
+	height: 32px;
+	background: url("../images/ico_correct.png") no-repeat;
+	background-size: 38px 32px;
+}
+
+.ques_store .ques_list .ico_error {
+	height: 32px;
+	background: url("../images/ico_error.png") no-repeat;
+	background-size: 32px 32px;
+}
+
+
+/*通关*/
+
+.clear_all .inner {
+	width: 90%;
+	margin: 26% auto;
+	box-sizing: border-box;
+	padding: 1px 0px;
+	background: url("../images/bg_clearall.png") no-repeat center center;
+	background-size: 100% auto;
+}
+
+.clear_all .form_list {
+	margin-top: 88%;
+	padding: 0 10%;
+}
+
+.clear_all .form_list li {
+	margin-bottom: 5%;
+}
+
+.clear_all .form_list .txt {
+	border: solid 1px #f6d258;
+	display: block;
+	padding: 0px;
+	height: 28px;
+	line-height: 28px;
+	width: 73%;
+}
+
+.clear_all .form_list .btn_sub {
+	display: block;
+	padding: 0px;
+	border: none;
+	height: 30px;
+	width: 20%;
+	background: url("../images/btn_sub.png") no-repeat center center;
+	background-size: 100% auto;
+}
+
+.clear_all .btn_group {
+	padding: 105% 10%;
+	-webkit-animation: bounceInUp 1s;
+	animation: bounceInUp 1s;
+}
+
+.clear_all .btn_group .btn {
+	width: 45%;
+}
+
+
+/*失败*/
+
+.game_over .inner {
+	width: 90%;
+	margin: 0px auto;
+	box-sizing: border-box;
+	padding: 1px 0px;
+	background: url("../images/bg_gameover.png") no-repeat center center;
+	background-size: 100% auto;
+}
+
+.game_over .btn {
+	font-size: 0;
+	line-height: 100%;
+}
+
+.game_over .btn_share {
+	margin-top: 5%;
+}
+
+.game_over .replay {
+	margin-top: 90%;
+	margin-bottom: 5%;
+	-webkit-animation: zoomIn 1s;
+	animation: zoomIn 1s;
+}
+.game_over .btn-blessing {
+	-webkit-animation: zoomIn 1s;
+	animation: zoomIn 1s;
+}
+
+
+/*CSS3动画*/
+
+@-webkit-keyframes rotating {
+	from {
+		-webkit-transform: rotate(0deg)
+	}
+	to {
+		-webkit-transform: rotate(360deg)
+	}
+}
+
+@keyframes rotating {
+	from {
+		transform: rotate(0deg)
+	}
+	to {
+		transform: rotate(360deg)
+	}
+}
+
+@-moz-keyframes rotating {
+	from {
+		-moz-transform: rotate(0deg)
+	}
+	to {
+		-moz-transform: rotate(360deg)
+	}
+}
+
+.rotate_doing {
+	-webkit-animation: rotating 1.2s linear infinite;
+	-moz-animation: rotating 1.2s linear infinite;
+}
+
+@media screen and (max-width: 320px) {
+	.ques_store .red_bar {
+		width: 84%;
+		margin-top: 22%;
+		margin-left: 12%;
+	}
+	.ques_store .ques {
+		height: 30px;
+	}
+	.ques_store .ques_list li {
+		padding: 6px 0;
+	}
+	.game_roll .page_pop .btn_start{
+		margin-top: 4px;
+	}
+}

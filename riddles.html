@@ -1,0 +1,3918 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>元宵“猜灯谜”</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<link href="css/firework.css" type="text/css" rel="stylesheet">
+		<link rel="stylesheet" href="css/animate-animo.min.css">
+		<link href="css/style.css?v1.1" type="text/css" rel="stylesheet">
+	</head>
+
+	<body>
+		<div class="tb">
+			<div class="game_start page tb_cell">
+				<div class="text-center arc_white">点击进入游戏</div>
+			</div>
+			<div class="mask loading_wrap tb_cell">
+				<div class="loading">
+					<div class="rect1"></div>
+					<div class="rect2"></div>
+					<div class="rect3"></div>
+					<div class="rect4"></div>
+					<div class="rect5"></div>
+				</div>
+			</div>
+			<div class="game_roll page tb_cell hidden">
+				<div class="inner">
+					<div class="text-center btn_pop"><img width="39%" src="images/btn_rule.png"></div>
+					<div class="mask hidden"></div>
+					<div class="page_pop hidden">
+						<article>规则说明</article>
+						<p>请从包含不同类型灯谜的花灯中选择感兴趣的类型作答。</p>
+						<p>答对五题即为通关，答错五题即为失败。</p>
+						<div class="btn_start text-center"><img width="120" src="images/btn_start.png"></div>
+						<div class="icon"><img width="75" src="images/ico_lartern.png"></div>
+					</div>
+				</div>
+			</div>
+			<!--选择灯谜-->
+			<div class="tb_cell page riddle_choice hidden">
+				<div class="inner page">
+					<div class="wrap" id="spinner">
+						<div class="box1 box" sid="1"></div>
+						<div class="box2 box" sid="2"></div>
+						<div class="box3 box" sid="3"></div>
+						<div class="box4 box" sid="4"></div>
+						<div class="box5 box" sid="5"></div>
+						<div class="box6 box" sid="6"></div>
+					</div>
+					<div class="lantern_head"></div>
+					<div class="lantern_foot"></div>
+				</div>
+				<div style=" font-size: 1.5em; text-align:center;color:#fff;">转动灯笼，可以看到更多灯谜哦 </div>
+			</div>
+			<!--答错-->
+			<div class="game_over tb_cell page night_sky hidden">
+				<div class="inner">
+					<div class="replay btn text-center"><img width="44%" src="images/btn_replay.png" alt="pic"></div>
+					<div class="btn-blessing btn text-center"><img width="44%" src="images/btn_guess.png" alt="pic"></div>
+				</div>
+			</div>
+			<!--通关-->
+			<div class="clear_all tb_cell page fw_wrap night_sky hidden">
+				<div class="firework">
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+				</div>
+				<div class="firework">
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+				</div>
+				<div class="firework">
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+				</div>
+				<div class="firework">
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+				</div>
+				<div class="firework">
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+					<div class="c"></div>
+				</div>
+				<div class="inner">
+					<div class="btn_group clearfix">
+						<div class="fl replay btn"><img width="100%" src="images/btn_replay.png" alt="pic"></div>
+						<div class="fr btn-blessing btn"><img width="100%" src="images/btn_satisfied.png" alt="pic"></div>
+					</div>
+				</div>
+			</div>
+			<!--祝福-->
+			<ul id="scene" class="pop_blessing hidden">   
+				<li class="layer" data-depth="0.00"><img class="shuimo" src="images/shuimo.png"></li>
+				<li class="layer" data-depth="0.40"><img class="denglong1" src="images/denglong1.png"></li>
+				<li class="layer" data-depth="0.40"><img class="denglong2" src="images/denglong2.png"></li>
+				<li class="layer" data-depth="0.40"><img class="denglong3" src="images/denglong3.png"></li>
+				<li class="layer" data-depth="0.60"><img class="logo" src="images/signup_logo.png"></li>
+				<li class="layer" data-depth="0.60"><img class="star" src="images/star.png"></li>
+				<li class="layer" data-depth="0.80"><img class="text" src="images/text.png"></li>
+				<li class="layer" data-depth="1.00"><img class="yuanxiao" src="images/yuanxiao.png"></li>
+				<li class="layer" data-depth="0.20"><img class="tangyuan" src="images/tangyuan.png"></li>
+			</ul>
+
+		</div>
+		
+		
+		<!--背景音乐-->
+		<div class="bg_music play">
+			<div class="note rotate_doing"></div>
+			<audio src="images/music.mp3" id="music_bg" loop=""></audio>
+		</div>
+
+		<!--第一类谜语,字谜-->
+		<ul class="ques_store ques_store1">
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle1.png"></div>
+					<div class="ques">
+						<p>语言不生动</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一字）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>讥</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>评</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>讯</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class="page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle1.png"></div>
+					<div class="ques">
+						<p>专车</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一字）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>转</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>轮</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>轿</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class="page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle1.png"></div>
+					<div class="ques">
+						<p>一日</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一字）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>旧</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>天</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>旦</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class="page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle1.png"></div>
+					<div class="ques">
+						<p>横竖要买</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一字）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>头</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>购</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>卖</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle1.png"></div>
+					<div class="ques">
+						<p>马三立</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一字）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>骊</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>骈</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>驯</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle1.png"></div>
+					<div class="ques">
+						<p>王不出头</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一字）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>玉</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>主</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>枉</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle1.png"></div>
+					<div class="ques">
+						<p>忽必烈</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一字）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>玩</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>趔</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>阮</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle1.png"></div>
+					<div class="ques">
+						<p>晒</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一字）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>旭</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>夕</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>昔</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle1.png"></div>
+					<div class="ques">
+						<p>溪旁桥畔柳初生</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一字）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>淋</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>沐</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>汕</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle1.png"></div>
+					<div class="ques">
+						<p>众</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一字）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>丛</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>从</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>侈</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle1.png"></div>
+					<div class="ques">
+						<p>上海点心</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一字）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>吟</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>呻</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>审</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle1.png"></div>
+					<div class="ques">
+						<p>冰</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一字）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>涸</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>泳</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>准</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle1.png"></div>
+					<div class="ques">
+						<p>千古恨</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一字）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>败</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>跌</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>重</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle1.png"></div>
+					<div class="ques">
+						<p>文言文</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一字）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>古</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>胡</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>故</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle1.png"></div>
+					<div class="ques">
+						<p>沧浪江畔</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一字）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>冰</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>岸</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>淼</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle1.png"></div>
+					<div class="ques">
+						<p>十字街头</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一字）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>十</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>千</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>士</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle1.png"></div>
+					<div class="ques">
+						<p>九点</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一字）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>办</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>刃</p>
+						</li>
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>丸</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle1.png"></div>
+					<div class="ques">
+						<p>男人的世界</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一字）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>甥</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>舅</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>妙</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle1.png"></div>
+					<div class="ques">
+						<p>无一成句</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一字）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>旬</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>幻</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>匊</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle1.png"></div>
+					<div class="ques">
+						<p>门庭若市</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一字）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>闹</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>闵</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>问</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+		<!--第二类谜语,成语-->
+		<ul class="ques_store ques_store2">
+
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle2.png"></div>
+					<div class="ques">
+						<p>评弹一曲动京华</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一成语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>南腔北调</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>余音绕梁</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>琴断朱弦</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle2.png"></div>
+					<div class="ques">
+						<p>限招九人</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一成语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>争先恐后</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>力争上游</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>不可收拾</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle2.png"></div>
+					<div class="ques">
+						<p>世说新语</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一成语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>陈言务去</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>信口开河</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>风声鹤唳</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle2.png"></div>
+					<div class="ques">
+						<p>楼下客满</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一成语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>高朋满座</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>后来居上</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>酒酣耳热</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle2.png"></div>
+					<div class="ques">
+						<p>月宫</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一成语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>镜花水月</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>岁月蹉跎</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>空中楼阁</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle2.png"></div>
+					<div class="ques">
+						<p>空难</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一成语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>飞来横祸</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>白首空归</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>空前绝后</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle2.png"></div>
+					<div class="ques">
+						<p>影迷聚会</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一成语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix correct">
+							<div class="serial"></div>
+							<p>只言片语</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>光影交错</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>不拘小节</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle2.png"></div>
+					<div class="ques">
+						<p>诛</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一成语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix correct">
+							<div class="serial"></div>
+							<p>有声有色</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>声色俱厉</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>五颜六色</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle2.png"></div>
+					<div class="ques">
+						<p>此地无银三百两</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一成语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>掩耳盗铃</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>监守自盗</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>不打自招</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle2.png"></div>
+					<div class="ques">
+						<p>万事不求人</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一成语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>自以为是</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>好自为之</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>踽踽独行</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle2.png"></div>
+					<div class="ques">
+						<p>从实际出发</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一成语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>一板一眼</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>实实在在</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>不虚此行</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle2.png"></div>
+					<div class="ques">
+						<p>落花时节又逢君</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一成语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>镜花水月</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>人面桃花</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>屡见不鲜</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle2.png"></div>
+					<div class="ques">
+						<p>碳素</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一成语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix correct">
+							<div class="serial"></div>
+							<p>黑白分明</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>颠倒黑白</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>白纸黑字</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle2.png"></div>
+					<div class="ques">
+						<p>明</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一成语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>明察秋毫</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>日积月累</p>
+						</li>
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>月满西楼</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle2.png"></div>
+					<div class="ques">
+						<p>会谈</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一成语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>慢条斯理</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>不由分说</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>众口一词</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle2.png"></div>
+					<div class="ques">
+						<p>万物生长靠太阳</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一成语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>日新月异</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>与日俱增</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>风调雨顺</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle2.png"></div>
+					<div class="ques">
+						<p>喊口号</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一成语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>整齐划一</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>口诛笔伐</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>异口同声</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle2.png"></div>
+					<div class="ques">
+						<p>祝酒词</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一成语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>声情并茂</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>字斟句酌</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>杯弓蛇影</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle2.png"></div>
+					<div class="ques">
+						<p>洞察</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一成语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>管中窥豹</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>一针见血</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>一孔之见</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle2.png"></div>
+					<div class="ques">
+						<p>唯我独品一枝春</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一成语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>独立寒秋</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>孤芳自赏</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>红杏出墙</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+		<!--第三类谜语,人物-->
+		<ul class="ques_store ques_store3">
+
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle3.png"></div>
+					<div class="ques">
+						<p>《尝试集》 </p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一人物名）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>胡歌</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>李易峰</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>杨幂</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle3.png"></div>
+					<div class="ques">
+						<p>说话清楚</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一人物名）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>陈道明</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>王志文</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>陈宝国</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle3.png"></div>
+					<div class="ques">
+						<p>北京之春</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一文学人物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>林冲</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>燕青</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>戴宗</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle3.png"></div>
+					<div class="ques">
+						<p>不是真玉</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一小说人物名）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>甄宝玉</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>妙玉</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>贾宝玉</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle3.png"></div>
+					<div class="ques">
+						<p>愚公移山</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一历史人物名）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>韩世忠</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>杨延昭</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>岳飞</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle3.png"></div>
+					<div class="ques">
+						<p>闭门复习</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一历史人物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>张飞</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>关羽</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>黄忠</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle3.png"></div>
+					<div class="ques">
+						<p>跑旱船</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一历史人物名）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>陆青</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>范仲淹</p>
+						</li>
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>陆游</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle3.png"></div>
+					<div class="ques">
+						<p>碧玉簪</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一小说人物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>薛宝钗</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>贾迎春</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>林黛玉</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle3.png"></div>
+					<div class="ques">
+						<p>废物</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一文学人物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>吴用</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>宋江</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>卢俊义</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle3.png"></div>
+					<div class="ques">
+						<p>太白全集</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一历史人物名）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>张之洞</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>李鸿章</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>曾国潘</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle3.png"></div>
+					<div class="ques">
+						<p>老子曰</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一历史人物名）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>李白</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>元稹</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>骆宾王</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle3.png"></div>
+					<div class="ques">
+						<p>邻家所为</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一历史人物名）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>比干</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>妲己</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>商纣王</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle3.png"></div>
+					<div class="ques">
+						<p>黑孩</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一历史人物名）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>孔子</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>墨子</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>老子</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle3.png"></div>
+					<div class="ques">
+						<p>古为今用</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一历史人物名）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>顾炎武</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>史可法</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>郑成功</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle3.png"></div>
+					<div class="ques">
+						<p>渐渐富起来</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一历史人物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>许褚</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>刘封</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>徐庶</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle3.png"></div>
+					<div class="ques">
+						<p>古屋</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一人物名）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>沈从文</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>茅盾</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>老舍</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle3.png"></div>
+					<div class="ques">
+						<p>献帝让位</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一历史人物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>刘备</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>刘表</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>刘禅</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle3.png"></div>
+					<div class="ques">
+						<p>禁止放羊</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一历史人物名）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>杜甫</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>李商隐</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>杜牧</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle3.png"></div>
+					<div class="ques">
+						<p>剧目皆为重庆客</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一人物名）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>蒋勤勤</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>周渝民</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>陈坤</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle3.png"></div>
+					<div class="ques">
+						<p>遍地英雄</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一人物名）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>成龙</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>周杰伦</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>周传雄</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+		<!--第四类谜语,趣味-->
+		<ul class="ques_store ques_store4">
+
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle4.png"></div>
+					<div class="ques">
+						<p>怒火满胸膛</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一天文名词）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>台风</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>启明星</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>气压中心</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle4.png"></div>
+					<div class="ques">
+						<p>阿Q画押</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一摄影名词）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>焦距</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>光圈</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>广角</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle4.png"></div>
+					<div class="ques">
+						<p>滑溜溜，光亮亮，眼睛生在屁股上。</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一生活用品）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>针</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>钉子</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>改锥</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle4.png"></div>
+					<div class="ques">
+						<p>海口</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一流行歌曲）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>大海</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>珊瑚海</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>在水一方</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle4.png"></div>
+					<div class="ques">
+						<p>稀奇稀奇真稀奇，拿人鼻子当马骑。</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一随身物品）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>怀表</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>眼镜</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>手链</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle4.png"></div>
+					<div class="ques">
+						<p>网开一面</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一生理名词）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>三围</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>人鱼线</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>胸肌</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle4.png"></div>
+					<div class="ques">
+						<p>财神爷的独子</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一国产影片）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>老炮儿</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>赵氏孤儿</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>我是路人甲</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle4.png"></div>
+					<div class="ques">
+						<p>面面相觑</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一数量词）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>两张</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>两块</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>二饼</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle4.png"></div>
+					<div class="ques">
+						<p>飞机试航</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一教育名词）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>高考</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>中考</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>大学</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle4.png"></div>
+					<div class="ques">
+						<p>红门楼，白院墙，里面坐个胖儿郎。</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一人体器官）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>嘴</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>耳朵</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>胃</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle4.png"></div>
+					<div class="ques">
+						<p>籽</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一卡通形象）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>唐老鸭</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>几米</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>米奇</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle4.png"></div>
+					<div class="ques">
+						<p>师说</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一宗教）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>佛教</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>基督教</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>道教</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle4.png"></div>
+					<div class="ques">
+						<p>老子豁出去了</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一网络热词）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>坑爹</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>给力</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>拼爹</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle4.png"></div>
+					<div class="ques">
+						<p>偷偷写信</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一职业）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>秘书</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>策划</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>程序员</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle4.png"></div>
+					<div class="ques">
+						<p>刁棋尽显</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一电影）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>出棋制胜</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>大国手</p>
+						</li>
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>鬼子来了</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle4.png"></div>
+					<div class="ques">
+						<p>有风不动无风动，不动无风动有风。</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一生活用品）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>扇子</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>风铃</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>水缸</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle4.png"></div>
+					<div class="ques">
+						<p>一双玉燕傍地飞，早上出门夜里归。</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一生活用品）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>帽子</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>棉猴</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>鞋子</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle4.png"></div>
+					<div class="ques">
+						<p>图表</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一国产影视剧）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>琅琊榜</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>封神榜</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>画皮</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle4.png"></div>
+					<div class="ques">
+						<p>轻声细语</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一体育项目）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>柔道</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>竞走</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>击剑</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle4.png"></div>
+					<div class="ques">
+						<p>以小见大</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一网络社交平台）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>微博</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>微信</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>陌陌</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+		<!--第五类谜语,动植物-->
+		<ul class="ques_store ques_store5">
+
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle5.png"></div>
+					<div class="ques">
+						<p>粽子脸，梅花脚。前面喊叫，后面舞刀。</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一动物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>香獐子</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>黄鼬（黄鼠狼）</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>狗</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle5.png"></div>
+					<div class="ques">
+						<p>沟里走，沟里串。背了针，忘了线。</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一动物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>穿山甲</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>刺猬</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>海蜇</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle5.png"></div>
+					<div class="ques">
+						<p>肥腿子，尖鼻子。穿裙子，背屋子。 </p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一动物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>螃蟹</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>扇贝</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>海龟</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle5.png"></div>
+					<div class="ques">
+						<p>播种</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一动物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>杜鹃鸟</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>白鹭</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>百灵鸟</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle5.png"></div>
+					<div class="ques">
+						<p>冰糖葫芦</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一植物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>牡丹</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>月季</p>
+						</li>
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>一串红</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle5.png"></div>
+					<div class="ques">
+						<p>一样物，花花绿。扑下台，跳上屋。</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一动物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>松鼠</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>老鼠</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>猫</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle5.png"></div>
+					<div class="ques">
+						<p>耳朵长，尾巴短。只吃菜，不吃饭。</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一动物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>兔子</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>长耳跳鼠</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>刺猬</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle5.png"></div>
+					<div class="ques">
+						<p>一把刀，顺水漂。有眼睛，没眉毛。</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一动物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>虾</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>鱼</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>蚂蚱</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle5.png"></div>
+					<div class="ques">
+						<p>苌</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一植物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>长春花</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>长生草</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>长叶兰</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle5.png"></div>
+					<div class="ques">
+						<p>一支香，地里钻。弯身走，不会断。</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一动物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>蛇</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>蜈蚣</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>蚯蚓</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle5.png"></div>
+					<div class="ques">
+						<p>树大如伞叶层层，一生可活几千年，人人爱它做橱箱，香气扑鼻质量坚</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一植物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>樟树</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>桂树</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>紫檀树</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle5.png"></div>
+					<div class="ques">
+						<p>古印度</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一植物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>天竺葵</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>菩提树</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>吉祥草</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle5.png"></div>
+					<div class="ques">
+						<p>身体足有丈二高，瘦长身节不长毛，下身穿条绿绸裤，头戴珍珠红绒帽</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一植物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>玉米</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>高粱</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>水稻</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle5.png"></div>
+					<div class="ques">
+						<p>峨眉云雾</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一植物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>银杏</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>山茶</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>冷杉</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle5.png"></div>
+					<div class="ques">
+						<p>三千宠爱在一身</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一植物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>垂杨</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>垂柳</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>杏树</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle5.png"></div>
+					<div class="ques">
+						<p>蓬蓬又松松，三月飞空中，远看像雪花，近看一团绒</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一植物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>棉花</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>锦葵</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>大麻槿</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle5.png"></div>
+					<div class="ques">
+						<p>小姑娘，夜纳凉。带灯笼，闪闪亮。</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一动物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>荧乌贼</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>萤火虫</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>夜光虫</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle5.png"></div>
+					<div class="ques">
+						<p>天南地北都能住，春风给我把辫梳，溪畔湖旁搭凉棚，能撒雪花当空舞</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一植物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>向日葵</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>杨树</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>柳树</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle5.png"></div>
+					<div class="ques">
+						<p>船板硬，船面高。四把桨，慢慢摇。</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一动物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>乌龟</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>海豚</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>鳄鱼</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle5.png"></div>
+					<div class="ques">
+						<p>记上一笔</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一植物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>忘忧草</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>四叶草</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>勿忘草</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+		<!--第六类谜语,古典-->
+		<ul class="ques_store ques_store6">
+
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle6.png"></div>
+					<div class="ques">
+						<p>元宵出门赏灯</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一俗语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>外行看热闹</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>凑热闹</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>呆子看戏——光图热闹</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle6.png"></div>
+					<div class="ques">
+						<p>十五日</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一字）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>受</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>半</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>胖</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle6.png"></div>
+					<div class="ques">
+						<p>半猜半估半知空</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一生肖）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>猪</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>鸡</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>猴</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle6.png"></div>
+					<div class="ques">
+						<p>正月十五打牙祭</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一俗语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>一年一回</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>过把瘾就死</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>随便吃吃</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle6.png"></div>
+					<div class="ques">
+						<p>层云隐去月当头</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一字）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>宵</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>屑</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>霁</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle6.png"></div>
+					<div class="ques">
+						<p>正月十五晨炊忙</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一中骊双珠）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>春饼?午市?香肠</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>元宵?早点?火烧</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>合菜?早点?稀粥</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle6.png"></div>
+					<div class="ques">
+						<p>元宵节前后</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一现代小说）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>春</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>二月</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>龙须沟</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle6.png"></div>
+					<div class="ques">
+						<p>元宵回暖</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一韵目带数）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>数九寒冬</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>三伏天</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>十四寒</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle6.png"></div>
+					<div class="ques">
+						<p>十五的月亮悬庭前</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一北京地名）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>圆明园</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>颐和园</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>故宫</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle6.png"></div>
+					<div class="ques">
+						<p>水帘洞里迎大圣</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一舞蹈名）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>猴儿舞</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>金蛇舞</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>孔雀舞</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle6.png"></div>
+					<div class="ques">
+						<p>园外隐约闻猿啼，星月小桥听萧声</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一节日）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>清明节</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>端午节</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>元宵节</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle6.png"></div>
+					<div class="ques">
+						<p>家家迎元宵</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一学校用语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>下课铃</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>课间操</p>
+						</li>
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>第二节</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle6.png"></div>
+					<div class="ques">
+						<p>元旦元宵捷报频传</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一成语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>欢庆佳节</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>节节高升</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>节节胜利</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle6.png"></div>
+					<div class="ques">
+						<p>婚期定在元宵后</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一成语）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>喜从天降</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>喜出望外</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>珠联璧合</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle6.png"></div>
+					<div class="ques">
+						<p>新春佳节话元宵</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一报刊杂志）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>参考消息</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>文摘报</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>半月谈</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle6.png"></div>
+					<div class="ques">
+						<p>此时此地</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一京剧剧目）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>大观园</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>八仙上寿</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>元宵谜</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle6.png"></div>
+					<div class="ques">
+						<p>元宵之夜遇徐娘</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一《射雕英雄传》人物）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>黄蓉</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>梅超风</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>胖妇人</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle6.png"></div>
+					<div class="ques">
+						<p>一夜鱼龙舞</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一民俗风俗）</div>
+					</div>
+					<ul class="ques_list">
+						<li class=" clearfix">
+							<div class="serial"></div>
+							<p>端午赛龙舟</p>
+						</li>
+						<li class="clearfix correct">
+							<div class="serial"></div>
+							<p>元宵灯会</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>中秋吃月饼</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle6.png"></div>
+					<div class="ques">
+						<p>白糖梅子真稀奇</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一食品）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>元宵</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>饺子</p>
+						</li>
+						<li class="clearfix ">
+							<div class="serial"></div>
+							<p>包子</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<li class=" page">
+				<div class="inner">
+					<div class="clearfix red_bar">
+						<div class="fl">答对：<span class="num_correct">0</span>题</div>
+						<div class="fr">本题：第<span class="ques_index"></span>题</div>
+						<div class="ico"><img width="24" src="images/ico_lartern.png" alt="pic"></div>
+					</div>
+					<div class="level text-center"><img width="105" src="images/ico_riddle6.png"></div>
+					<div class="ques">
+						<p>高台对映月分明</p>
+					</div>
+					<div class="clearfix mainsub">
+						<div class="btn_pink fl">换个类型试试？</div>
+						<div class="fr gray">（打一字）</div>
+					</div>
+					<ul class="ques_list">
+						<li class="correct clearfix">
+							<div class="serial"></div>
+							<p>昙</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>雾</p>
+						</li>
+						<li class="clearfix">
+							<div class="serial"></div>
+							<p>昊</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+		</ul>
+
+		
+		<script src="js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--转动灯笼-->
+		<script src="js/jquery.touchSwipe.min.js"></script>
+		<!--选择灯谜-->
+		<script src="js/animo.min.js"></script>
+		<script src="js/function.js"></script>
+		<script src="js/parallax.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function audioAutoPlay(id){
+			    var audio = document.getElementById(id);
+			    audio.play();
+			    document.addEventListener("WeixinJSBridgeReady", function () {
+		            audio.play();
+			    }, false);
+			}
+			audioAutoPlay("music_bg");
+		</script>
+	</body>
+</html>
